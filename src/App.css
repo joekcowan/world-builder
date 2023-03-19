@@ -1,0 +1,15 @@
+.card-hover:hover {
+  filter: brightness(85%);
+}
+
+.card-new:hover {
+  opacity: 0.75;
+}
+
+.card-new:hover {
+  background-color: #198753;
+  color: white !important;
+  opacity: 0.75;
+  /* color: #198753 !important; */
+  /* border-color: #198753 !important; */
+}
