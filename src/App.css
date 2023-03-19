@@ -14,7 +14,6 @@
   /* border-color: #198753 !important; */
 }
 
-.worlds-thumbnail{
-  height: 18rem;
-  width: 18rem;
+.overlay-img{
+  opacity: .5;
 }

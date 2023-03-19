@@ -33,13 +33,13 @@ function Worlds() {
       <CreateWorldCard />
       {loadedWorlds.map((item) => (
 
-        <Col id={item.id} className="g-2 card-hover ">
+        <Col id={item.id} className="g-2 card-hover " style={{width: '17rem', height: '15rem'}}>
           <Link to={'/world-info'} state={[item.id, item.image, item.name, item.origin, item.description]} className="text-decoration-none text-dark">
-            <Card className='shadow-sm worlds-thumb-card'>
-              <Card.Img variant="top" className='img worlds-thumbnail' src={item.image} />
-              <Card.Body className='d-flex align-items-center justify-content-center'>
-                <Card.Title className='text-center'>{item.name}</Card.Title>
-              </Card.Body>
+            <Card className='shadow-sm bg-secondary text-light w-100 h-100'>
+              <Card.Img variant="top" className='img-fluid w-100 h-100 overlay-img' src={item.image} />
+              <Card.ImgOverlay>
+                <Card.Title className='text-center h3'><h3 style={{textAlign: "center", verticalAlign: "middle", marginTop: "30%"}}>{item.name}</h3></Card.Title>
+              </Card.ImgOverlay>
             </Card>
           </Link>
         </Col>
