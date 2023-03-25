@@ -1,6 +1,6 @@
 
 import React, {useRef} from 'react';
-import {Form} from 'react-bootstrap';
+import {Form, Row, Col} from 'react-bootstrap';
 
 function NewWorldForm(props) {
 
@@ -24,26 +24,30 @@ function NewWorldForm(props) {
   return (
 
     <Form onSubmit={submitHandler}>
-      <h1>Create A New World</h1>
-      <Form.Group className="mt-3">
-        <Form.Label htmlFor="title">World Name</Form.Label>
-        <Form.Control type="text" as='input' required id="name" ref={nameRef} />
-      </Form.Group>
-      <Form.Group className="mt-3">
-        <Form.Label htmlFor="origin">What story does this world originate from?</Form.Label>
-        <Form.Control type="text" as='input' id="origin" ref={originRef} />
-      </Form.Group>
-      <Form.Group className="mt-3">
-        <Form.Label htmlFor="image">Background Image URL</Form.Label>
-        <Form.Control type="url" as='input' id="image" ref={imageRef} />
-      </Form.Group>
-      <Form.Group className="mt-3">
-        <Form.Label htmlFor="description">Description</Form.Label>
-        <Form.Control as="textarea" id="description" rows="5" ref={descriptRef} />
-      </Form.Group>
-      <Form.Group className="mt-3">
-        <Form.Control as="input" type='submit' className='btn btn-outline-success btn-lg' />
-      </Form.Group>
+      <Row className='justify-content-center align-items-center g-2'>
+        <Col xs={6}>
+          <h1>Create A New World</h1>
+          <Form.Group className="mt-3">
+            <Form.Label htmlFor="title">World Name</Form.Label>
+            <Form.Control type="text" as='input' required id="name" ref={nameRef} />
+          </Form.Group>
+          <Form.Group className="mt-3">
+            <Form.Label htmlFor="origin">What story does this world originate from?</Form.Label>
+            <Form.Control type="text" as='input' id="origin" ref={originRef} />
+          </Form.Group>
+          <Form.Group className="mt-3">
+            <Form.Label htmlFor="image">Background Image URL</Form.Label>
+            <Form.Control type="url" as='input' id="image" ref={imageRef} />
+          </Form.Group>
+          <Form.Group className="mt-3">
+            <Form.Label htmlFor="description">Description</Form.Label>
+            <Form.Control as="textarea" id="description" rows="5" ref={descriptRef} />
+          </Form.Group>
+          <Form.Group className="mt-3">
+            <Form.Control as='input' type='submit' className='btn btn-success btn-lg' />
+          </Form.Group>
+        </Col>
+      </Row>
     </Form>
 
   )

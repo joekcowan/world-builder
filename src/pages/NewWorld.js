@@ -26,7 +26,7 @@ function NewWorld() {
 
   return (
     <Row className='mt-3'>
-      <Col>
+      <Col xs={12}>
         <Card>
           <Card.Body>
             <NewWorldForm onAddWorld={addWorldHandler} />
