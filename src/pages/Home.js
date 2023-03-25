@@ -1,5 +1,6 @@
 import React from 'react';
 import {Card, Col, Row, Button} from 'react-bootstrap';
+import {Link} from 'react-router-dom';
 
 function Home() {
   return (
@@ -9,10 +10,10 @@ function Home() {
           <Card.Body>
             <Card.Title className='display-1'>Welcome to World Builder</Card.Title>
             <Card.Text>
-              Some quick example text to build on the card title and make up the bulk of
-              the card's content.
+              <h4>You have reached my world building app. This is an app designed to help gamers and storyteller's build out their ideas. To get started click on an option for your starting point.</h4>
             </Card.Text>
-            <Button variant="primary">Go somewhere</Button>
+            <Link to="/worlds"><Button variant="primary" className='m-1'>Add A World</Button></Link>
+            <Link to="/characters"><Button variant="primary" className='m-1'>Build a world</Button></Link>
           </Card.Body>
         </Card>
 
