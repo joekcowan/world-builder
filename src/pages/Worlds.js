@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {Row, Card, Col} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
 import CreateWorldCard from '../components/CreateWorldCard';
+import run from '../run';
 
 function Worlds() {
 
@@ -10,22 +11,23 @@ function Worlds() {
   //grab worlds from API and format data
   useEffect(() => {
     //get data
-    fetch("https://world-builder-5ae37-default-rtdb.firebaseio.com/worlds.json").then(res => {
-      return res.json();
-    }).then(data => {
+    // fetch("https://world-builder-5ae37-default-rtdb.firebaseio.com/worlds.json").then(res => {
+    //   return res.json();
+    // }).then(data => {
 
-      //convert data to array to map
-      const worlds = []
-      for(const key in data) {
-        const world = {
-          id: key,
-          ...data[key]
-        };
-        worlds.push(world);
-      }
-      //load received data
-      setLoadedWorlds(worlds);
-    });
+    //   //convert data to array to map
+    //   const worlds = []
+    //   for(const key in data) {
+    //     const world = {
+    //       id: key,
+    //       ...data[key]
+    //     };
+    //     worlds.push(world);
+    //   }
+    //   //load received data
+    //   setLoadedWorlds(worlds);
+    // });
+
   }, []);
 
   return (
