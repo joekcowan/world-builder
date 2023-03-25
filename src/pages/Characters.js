@@ -30,16 +30,14 @@ function Characters(props) {
   }, []);
 
   return (
-    <Card>
-      <Card.Body>
-        <Card.Title className='fs-2'>Characters from this world</Card.Title>
+    <Card className='p-5'>
+        <Card.Title className='fs-2'>Characters</Card.Title>
         <h1>{props.worldId}</h1>
         <ul>
           {loadedCharacters.map((item) => (
             <li>{item.name}</li>
           ))}
         </ul>
-      </Card.Body>
     </Card>
   )
 }

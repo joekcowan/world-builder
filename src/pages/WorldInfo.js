@@ -16,25 +16,27 @@ function WorldInfo() {
   };
 
   return (
-    <div>
+    <div className='h-100'>
       <Row>
         <Col>
-          <Card>
-            <Card.Body>
-              <Row xs={1} md={2}>
-                <Col>
-                  <Card.Img src={imageUrl} />
-                </Col>
-                <Col>
-                  <WorldDataCard {...infoProps} />
-                </Col>
-              </Row>
-            </Card.Body>
+          <Card className='p-5'>
+            {/* <Card.Body> */}
+            <Row>
+              <Col>
+                <Card.Img src={imageUrl} />
+              </Col>
+              <Col>
+                <WorldDataCard {...infoProps} />
+              </Col>
+            </Row>
+            {/* </Card.Body> */}
           </Card>
         </Col>
       </Row>
       <Row>
+        <Col>
         <Characters {...worldId} />
+        </Col>
       </Row>
     </div>
   )

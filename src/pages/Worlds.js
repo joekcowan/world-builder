@@ -29,7 +29,7 @@ function Worlds() {
   }, []);
 
   return (
-    <Row xs={1} md={2} lg={4}>
+    <Row xs={1} md={2} lg={4} className="h-100">
       <CreateWorldCard />
       {loadedWorlds.map((item) => (
 

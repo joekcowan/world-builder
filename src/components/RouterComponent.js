@@ -11,7 +11,7 @@ import Worlds from '../pages/Worlds';
 
 function RouterComponent() {
   return (
-    <Container>
+    <Container className='mh-100'>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/worlds" element={<Worlds />} />
