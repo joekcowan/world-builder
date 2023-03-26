@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {Row, Card, Col} from 'react-bootstrap';
 import {Link} from 'react-router-dom';
-import CreateWorldCard from '../components/CreateWorldCard';
+import CreateObjectCard from '../components/CreateObjectCard';
 
 function Worlds() {
 
@@ -29,10 +29,9 @@ function Worlds() {
   }, []);
 
   return (
-    <Row xs={1} md={2} lg={4} className="h-100">
-      <CreateWorldCard />
+    <Row xs={1} md={5} lg={5} className="h-100">
+      <CreateObjectCard create="world"/>
       {loadedWorlds.map((item) => (
-
         <Col id={item.id} className="g-2 card-hover " style={{width: '17rem', height: '15rem'}}>
           <Link to={'/world-info'} state={[item.id, item.image, item.name, item.origin, item.description]} className="text-decoration-none text-dark">
             <Card className='shadow-sm bg-secondary text-light w-100 h-100'>

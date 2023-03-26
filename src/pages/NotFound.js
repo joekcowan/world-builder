@@ -2,7 +2,7 @@ import React from 'react';
 
 function NotFound() {
   return (
-    <div>This page does not exist.</div>
+    <div>Oops! This page has not been built yet or doesn't exist.</div>
   )
 }
 

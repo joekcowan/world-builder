@@ -4,21 +4,18 @@ import {Link} from 'react-router-dom';
 
 function Home() {
   return (
-    <Row className='mt-3'>
-      <Col>
-        <Card>
-          <Card.Body>
-            <Card.Title className='display-1'>Welcome to World Builder</Card.Title>
-            <Card.Text>
-              <h4>You have reached my world building app. This is an app designed to help gamers and storyteller's build out their ideas. To get started click on an option for your starting point.</h4>
-            </Card.Text>
+    <section>
+      <Row>
+        <Col>
+          <span className='display-1 mt-5'>Welcome to World Builder</span>
+          <h4 className='mt-3'>You have reached my world building app. This is an app designed to help gamers and storyteller's build out their ideas. To get started click on an option for your starting point.</h4>
+          <div className='mt-3'>
             <Link to="/worlds"><Button variant="primary" className='m-1'>Add A World</Button></Link>
             <Link to="/characters"><Button variant="primary" className='m-1'>Add a character</Button></Link>
-          </Card.Body>
-        </Card>
-
-      </Col>
-    </Row>
+          </div>
+        </Col>
+      </Row>
+    </section>
   )
 }
 

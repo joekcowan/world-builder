@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
-import {Card} from 'react-bootstrap';
+import {Card, Col, Row} from 'react-bootstrap';
+import CreateObjectCard from '../components/CreateObjectCard';
 
 function Characters(props) {
 
@@ -33,6 +34,11 @@ function Characters(props) {
     <Card className='p-5'>
         <Card.Title className='fs-2'>Characters</Card.Title>
         <h1>{props.worldId}</h1>
+        <Row>
+          <Col>
+            <CreateObjectCard create="character"/>
+          </Col>
+        </Row>
         <ul>
           {loadedCharacters.map((item) => (
             <li>{item.name}</li>
