@@ -1,0 +1,3 @@
+node_modules
+*.pem
+compose-dev.yaml
