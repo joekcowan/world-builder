@@ -1,19 +1,14 @@
 import React from 'react';
 import {Card, Col, Row} from 'react-bootstrap';
 import {useLocation} from 'react-router-dom';
-import WorldDataCard from '../components/WorldDataCard';
-import Characters from './Characters';
+// import Characters from '../pages/Characters';
+import ItemInfoCard from './ItemInfoCard';
 
-function WorldInfo() {
+function ProjectInfo() {
 
   //transfer id from world
   const location = useLocation();
-  const [worldId, imageUrl, name, origin, description] = location.state;
-  let infoProps = {
-    name: name,
-    origin: origin,
-    description: description
-  };
+  const { itemData } = location.state || {};
 
   return (
     <div className='h-100'>
@@ -23,10 +18,10 @@ function WorldInfo() {
             {/* <Card.Body> */}
             <Row>
               <Col>
-                <Card.Img src={imageUrl} />
+                <Card.Img src={itemData.imageUrl} />
               </Col>
               <Col>
-                <WorldDataCard {...infoProps} />
+                <ItemInfoCard item={itemData} />
               </Col>
             </Row>
             {/* </Card.Body> */}
@@ -35,11 +30,11 @@ function WorldInfo() {
       </Row>
       <Row>
         <Col>
-        <Characters {...worldId} />
+        Associated Characters
         </Col>
       </Row>
     </div>
   )
 }
 
-export default WorldInfo;
+export default ProjectInfo;

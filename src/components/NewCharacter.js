@@ -14,7 +14,7 @@ export default function NewCharacter() {
     event.preventDefault();//stops form submit
     const characterData = {};
     characterData.name = nameRef.current.value;//gets value of ref
-    characterData.image = imageRef.current.value;
+    characterData.imageUrl = imageRef.current.value;
     characterData.description = descriptRef.current.value;
     characterData.worldIds = worldIds;
 
@@ -55,8 +55,8 @@ export default function NewCharacter() {
                     <Form.Control type="text" as='input' id="worlds" />
                   </Form.Group> */}
                   <Form.Group className="mt-3">
-                    <Form.Label htmlFor="image">Image URL</Form.Label>
-                    <Form.Control type="url" as='input' id="image" ref={imageRef} />
+                    <Form.Label htmlFor="imageUrl">Image URL</Form.Label>
+                    <Form.Control type="url" as='input' id="imageUrl" ref={imageRef} />
                   </Form.Group>
                   <Form.Group className="mt-3">
                     <Form.Label htmlFor="description">Description</Form.Label>

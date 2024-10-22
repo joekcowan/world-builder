@@ -1,10 +1,10 @@
 import React, {useRef}  from 'react';
 import {Form, Card, Col, Row} from 'react-bootstrap';
 import {useNavigate} from 'react-router-dom';
-import {addItemForUser} from '../utils/firebaseUtils';
 import {useAuth} from '../utils/useAuth';
+import {addProjectForUser} from '../utils/firebaseUtils';
 
-function NewWorld(props) {
+function NewProject() {
 
   const navigate = useNavigate();
   const { user } = useAuth();
@@ -14,40 +14,41 @@ function NewWorld(props) {
   const descriptRef = useRef();
 
   async function submitHandler(event) {
-    event.preventDefault();//stops form submit
-    const worldData = {
-      origin : originRef.current.value,
-      name : nameRef.current.value,
-      imageUrl : imageRef.current.value,
-      description : descriptRef.current.value,
-      parentId : props.parentId,
-      type : 'world'
+    event.preventDefault(); // Stops form submission
+    const projectData = {
+      userId: user.uid,
+      origin: originRef.current.value,
+      name: nameRef.current.value,
+      imageUrl: imageRef.current.value,
+      description: descriptRef.current.value,
+      type: 'project'
     };
 
-    const isItemAdded = await addItemForUser(user.uid, worldData);
+    const isProjectAdded = await addProjectForUser(user.uid, projectData);
 
-    if (isItemAdded) {
-      navigate('/item-info');
+    if (isProjectAdded) {
+      navigate('/item-info'); // Navigate after successful project addition
     } else {
-      console.error("Failed to add the item");
+      console.error("Failed to add the project");
     }
   }
+
   return (
     <Row className=''>
       <Col xs={12}>
         <Card className='shadow-sm'>
           <Card.Body className='p-5'>
-            {/* <NewWorldForm onAddWorld={addWorldHandler} /> */}
+            {/* <NewWorldForm onAddWorld={addProjectHandler} /> */}
             <Form onSubmit={submitHandler}>
               <Row className='justify-content-center align-items-center g-2'>
                 <Col xs={6}>
-                  <h1>Create A New World</h1>
+                  <h1>Create A New Project</h1>
                   <Form.Group className="mt-3">
-                    <Form.Label htmlFor="title">World Name</Form.Label>
+                    <Form.Label htmlFor="title">Project Name</Form.Label>
                     <Form.Control type="text" as='input' required id="name" ref={nameRef} />
                   </Form.Group>
                   <Form.Group className="mt-3">
-                    <Form.Label htmlFor="origin">What story does this world originate from?</Form.Label>
+                    <Form.Label htmlFor="origin">What does this project originate from?</Form.Label>
                     <Form.Control type="text" as='input' id="origin" ref={originRef} />
                   </Form.Group>
                   <Form.Group className="mt-3">
@@ -71,5 +72,4 @@ function NewWorld(props) {
   )
 }
 
-
-export default NewWorld;
+export default NewProject;

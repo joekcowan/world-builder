@@ -9,7 +9,7 @@ function App() {
   return (
     <Router>
       <MainNavigation />
-      <main>
+      <main style={{height:'100%'}}>
         <RouterComponent />
       </main>
     </Router >

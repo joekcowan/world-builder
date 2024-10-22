@@ -1,5 +1,6 @@
 .card-hover:hover {
   filter: brightness(85%);
+  cursor: pointer;
 }
 
 .card-new:hover {
